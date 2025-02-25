@@ -1,0 +1,32 @@
+###############
+## 
+####
+
+GPU: [0]
+
+VERBOSE: True
+
+MODEL:
+  MODE: 'low-light'
+  SESSION: 'LOLv1-mean'
+
+# Optimization arguments.
+OPTIM:
+  BATCH_SIZE: 2
+  NUM_EPOCHS: 300
+#  # NEPOCH_DECAY: [10]
+#  LR_INITIAL: 5e-5
+#  LR_MIN: 1e-5
+  LR_INITIAL: 1e-4
+  LR_MIN: 1e-6
+#  BETA1: 0.9
+
+TRAINING:
+  VAL_AFTER_EVERY: 1
+  RESUME: False
+  TRAIN_PS: 256
+  VAL_PS: 256
+  TRAIN_DIR: './Datasets/LOL-v2/Real_captured/Train' # path to training data
+  VAL_DIR: './Datasets/LOL-v2/Real_captured/Test'    # path to validation data
+  SAVE_DIR: './checkpoints'     # path to save models and images
+  SAVE_IMAGES: False
